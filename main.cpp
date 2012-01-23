@@ -2,7 +2,7 @@
  * @brief Project 1 to test the project pipeline.
  *
  * @par
- * Copyright Matt Welch (c) 2011
+ * Copyright Matt Welch (c) 2012
  * Creative Commons Attribution-ShareAlike 3.0 Unported License.
  */
 
