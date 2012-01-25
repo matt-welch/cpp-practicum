@@ -43,16 +43,22 @@ bool K1::Ram::IsWordAlignedAddress(uint32_t address) const
 }
 
 /***** Left as an excercise to the student *****/
+/* const function guaranteed to not modify the class state*/
 uint32_t K1::Ram::GetWord(uint32_t address) const
 {
-    // I don't think this works yet, but it looks like it should
-    return (dataStore.at(address));   
+    // verify that the address specified is valid
+	if(dataStore.find(address) != dataStore.end())
+		return (dataStore.at(address));
+	else
+		throw UninitializedMemoryException();
 }
 
 void K1::Ram::PutWord(uint32_t address, uint32_t datum)
 {
-    dataStore[address] = datum;
-    return;
+
+    // verify that the address specified is valid (the map has expanded to allow the address)
+	if(dataStore.find(address) != dataStore.end())
+		dataStore[address] = datum;
+    else// insert at specified address instead
+    	dataStore.insert(std::pair<uint32_t, uint32_t>(address, datum));
 }
-
-
