@@ -4,4 +4,4 @@ syntax: glob
 *build*
 .cproject
 .project
-
+*Debug*
