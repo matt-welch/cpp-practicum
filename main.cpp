@@ -9,7 +9,7 @@
 #include <iostream>
 #include <stdint.h>
 #include <string.h>
-#include "Fletcher16.h"
+#include "virtual-machine/Fletcher16.h"
 
 using std::cout;
 using std::endl;

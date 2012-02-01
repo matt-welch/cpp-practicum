@@ -15,7 +15,9 @@
 #include <time.h>
 #include "IMemory.h"
 #include "Ram.h"
+
 using namespace K1;
+
 class MemoryTest: public ::testing::Test {
     protected:
         virtual void SetUp()

@@ -2,7 +2,7 @@ include(ExternalProject)
 cmake_minimum_required(VERSION 2.8)
 PROJECT(CSE394_VM)
 SET(SOURCES main.cpp)
-SET(CMAKE_CXX_FLAGS "-std=c++0x -O0 -g3 -ggdb -Wall -pedantic")
+SET(CMAKE_CXX_FLAGS "-std=c++0x -O0 -g3 -ggdb -Wall -pedantic -fopenmp ")
 
 
 #Build the Application

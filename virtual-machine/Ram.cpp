@@ -24,8 +24,10 @@ void K1::Ram::PutByte(uint32_t address, uint8_t datum)
         oldData = GetWord(wordAddress);
 
     uint8_t byteAddress = address & 0x3;
-    /* erase the data from the old byte, that is int the byte address'
+    /* erase the data from the old byte, that is in the byte address'
      * position
+	 * 
+	 * masks off word address so all that's left is the byte address
      */
     uint32_t newData = oldData & ~(0xFF << (byteAddress*8));
     newData = newData | datum << (byteAddress*8);
@@ -42,23 +44,23 @@ bool K1::Ram::IsWordAlignedAddress(uint32_t address) const
     return (GetWordAlignedAddress(address) == address) ? true : false;
 }
 
-/***** Left as an excercise to the student *****/
+/***** Left as an exercise to the student *****/
 /* const function guaranteed to not modify the class state*/
 uint32_t K1::Ram::GetWord(uint32_t address) const
 {
     // verify that the address specified is valid
-	if(dataStore.find(address) != dataStore.end())
+	if(dataStore.find(address) != dataStore.end()){
 		return (dataStore.at(address));
-	else
+	}else{
 		throw UninitializedMemoryException();
+	}
 }
 
 void K1::Ram::PutWord(uint32_t address, uint32_t datum)
 {
-
     // verify that the address specified is valid (the map has expanded to allow the address)
 	if(dataStore.find(address) != dataStore.end())
 		dataStore[address] = datum;
-    else// insert at specified address instead
+	else// insert at specified address instead (which will expand the map)
     	dataStore.insert(std::pair<uint32_t, uint32_t>(address, datum));
 }
