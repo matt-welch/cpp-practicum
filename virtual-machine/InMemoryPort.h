@@ -9,7 +9,8 @@
 
 #ifndef _INMEMORYPORT
 #define _INMEMORYPORT
-
+#include <deque>
+using std::deque;
 
 namespace K1 {
 template <typename MsgType>
@@ -17,17 +18,21 @@ class InMemoryPortHandler {
     public:
         void WriteMsg(MsgType const msg)
         {
-		//STUB: Student shall implement this.            
+		//STUB: Student shall implement this.
+        	myQueue.push_back(msg);
         }   
         
         MsgType ReadMsg()
         {
             MsgType msg;
 		//STUB: The student shall implement this.
+            msg = myQueue.front();
+            myQueue.pop_front();
+
             return msg;
         }
     private:
-
+        deque<MsgType> myQueue;
 };
 }
 

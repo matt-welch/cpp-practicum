@@ -11,18 +11,21 @@
 #include "InMemoryPort.h"
 
 namespace K1 {
-
 template <typename MsgType, typename PortHandler>
 class IPort {
 public:
     IPort& operator<<(MsgType const msg)
     {
         //STUB: Student shall implement this
+    	myHandler.WriteMsg(msg);
+    	return *this;
     }
 
     IPort& operator>>(MsgType& msg)
     {
-	//STUB: Student shall implement this        
+	//STUB: Student shall implement this
+    	msg = myHandler.ReadMsg();  // get value from vector
+    	return *this;
     }
 private:
     PortHandler myHandler;
