@@ -1,5 +1,5 @@
 #include "TestPort.h"
-#include <vector>
+#include <deque>
 #include <algorithm>
 #include <numeric>
 
@@ -15,7 +15,15 @@ TEST_F(PortTest, SendInt)
 
 TEST_F(PortTest, SendManyInt)
 {
+	systemBus << 1 << 2 << 3;
+
     //STUB: Student shall implement this
-    EXPECT_TRUE(false);
+	BusWidth_t first, second, third;
+	systemBus >> first;
+	systemBus >> second;
+	systemBus >> third;
+    EXPECT_EQ(1, first);
+    EXPECT_EQ(2, second);
+    EXPECT_EQ(3, third);
 }
 
