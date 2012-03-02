@@ -11,6 +11,7 @@
 #include <gtest/gtest.h>
 #include "IPort.h"
 #include "InMemoryPort.h"
+#include "RegFile.h"
 #include <stdint.h>
 
 class PortTest : public ::testing::Test {
@@ -26,6 +27,7 @@ class PortTest : public ::testing::Test {
         }
 
         K1::IPort<BusWidth_t, K1::InMemoryPortHandler<BusWidth_t> > systemBus;
+        K1::RegFile systemRegisters;
 };
 
 #endif /* end of include guard: _TESTPORT */
