@@ -1,6 +1,4 @@
 #include "TestMemory.h"
-#include <omp.h>
-#define	NUM_THREADS	4
 
 TEST_F(MemoryTest, ReadUnitializedMemory)
 {
@@ -21,26 +19,6 @@ TEST_F(MemoryTest, ReadWriteByte)
         }
     }
 }
-
-#ifdef PARALLEL
-TEST_F(MemoryTest, ReadWriteByteParallel)
-{
-#pragma omp parallel num_threads(NUM_THREADS)
-	{
-		int id = omp_get_thread_num();
-		uint32_t init_addr = 256*id;
-		uint32_t fin_addr  = 256*(id+1)-1;
-		for(uint32_t addr = init_addr; addr < fin_addr; ++addr)
-		{
-			for(uint8_t datum = 0; datum < UINT8_MAX; ++datum)
-			{
-				mainMemory->PutByte(addr, datum);
-				ASSERT_EQ(datum,mainMemory->GetByte(addr));
-			}
-		}
-	} //end parallel section
-}
-#endif
 
 TEST_F(MemoryTest, WordAlignedMemory)
 {
