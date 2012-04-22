@@ -10,49 +10,16 @@ using namespace std;
 class Display : public Device {
 public:
 
-    Display (ostream& outPut):
-        myOutput(outPut)
-    {
-    }
-    virtual ~Display ()
-    {
-    }
-    
-    virtual void PutChar(char c)
-    {
-        myOutput << c;
-    }
+    Display (ostream& outPut);
 
-    virtual char GetChar()
-    {
-        // Do nothing;
-        return 'a';
-    }
+    virtual ~Display ();
+    
+    virtual void PutChar(char c);
+
+    virtual char GetChar();
 
 private:
     ostream& myOutput;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #endif /* end of include guard: _DISPLAY */
