@@ -22,3 +22,7 @@ char Display::GetChar(){
     // Do nothing;
     return 'a';
 }
+
+void Display::notify(Event const & someEvent){
+	std::cout << "Display:::" << endl;
+}

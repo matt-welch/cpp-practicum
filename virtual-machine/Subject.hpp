@@ -13,14 +13,13 @@
 class Subject{
 public:
 	Subject();
-	~Subject();
-	void RegisterObserver(
-			Observer const & someObserver, Event const & someEvent);
-	void UnRegisterObserver(
-				Observer const & someObserver, Event const & someEvent);
-	void EmitEvent(Event const) = 0;
-protected:
-	void Notify( );
+	virtual ~Subject();
+	virtual void RegisterObserver(
+			Observer * someObserver, Event * someEvent);
+	virtual void UnRegisterObserver(
+				Observer * someObserver, Event * someEvent);
+	virtual void EmitEvent(Event * someEvent);
+	virtual void Notify( );
 };
 
 

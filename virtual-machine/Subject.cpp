@@ -8,15 +8,15 @@
 #include "Subject.hpp"
 
 void Subject::RegisterObserver(
-		Observer const & someObserver,
-		Event const & someEvent)
+		Observer * someObserver,
+		Event * someEvent)
 {
 
 }
 
 void Subject::UnRegisterObserver(
-		Observer const & someObserver,
-		Event const & someEvent)
+		Observer * someObserver,
+		Event * someEvent)
 {
 
 }

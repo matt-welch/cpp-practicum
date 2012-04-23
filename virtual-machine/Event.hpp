@@ -8,13 +8,18 @@
 #ifndef EVENT_HPP_
 #define EVENT_HPP_
 
-using namespace std;
+#include <string>
+using std::string;
 
 class Event{
-
+public:
 	Event();
+	Event(string someInfo);
 	~Event();
-
+	string getInfo();
+	void setInfo(string someInfo);
+private:
+	string _myInfo;
 };
 
 
