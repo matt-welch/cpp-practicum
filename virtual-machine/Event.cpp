@@ -7,9 +7,12 @@
 
 #include "Event.hpp"
 
-Event::Event(){
+Event::Event()
+{
 	_myInfo = "";
 }
+
+Event::~Event(){ }
 
 Event::Event(string someInfo):
 		_myInfo(someInfo)
@@ -17,11 +20,12 @@ Event::Event(string someInfo):
 
 }
 
-string Event::getInfo(){
-	return _myInfo;
+string Event::getInfo()
+{
+    return _myInfo;
 }
 
-void Event::setInfo(string someInfo){
-	_myInfo = someInfo;
+void Event::setInfo(string someInfo)
+{
+    _myInfo = someInfo;
 }
-
