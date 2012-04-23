@@ -5,3 +5,5 @@ syntax: glob
 .cproject
 .project
 *Debug*
+compiles_now
+
