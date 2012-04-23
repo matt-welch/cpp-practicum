@@ -13,17 +13,11 @@ using std::string;
 
 class Event{
 public:
-	Event(){}
-	Event(string someInfo){}
-	~Event(){}
-	string getInfo()
-    {
-        return _myInfo;
-    }
-	void setInfo(string someInfo)
-    {   
-        _myInfo = someInfo;
-    }
+	Event();
+	Event(string someInfo);
+	~Event();
+	string getInfo();
+	void setInfo(string someInfo);
 private:
 	string _myInfo;
 };
