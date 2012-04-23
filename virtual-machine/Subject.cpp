@@ -7,6 +7,14 @@
 
 #include "Subject.hpp"
 
+Subject::Subject()
+{
+}
+
+Subject::~Subject()
+{
+}
+
 void Subject::RegisterObserver(
 		Observer * someObserver,
 		Event * someEvent)
@@ -19,4 +27,12 @@ void Subject::UnRegisterObserver(
 		Event * someEvent)
 {
 
+}
+
+void Subject::EmitEvent(Event * someEvent)
+{
+}
+
+void Subject::Notify()
+{
 }
