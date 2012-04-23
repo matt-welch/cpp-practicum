@@ -11,10 +11,10 @@
 #include "Event.hpp"
 
 class Observer {
-
+public:
 	Observer(){};
 
-	~Observer(){};
+	virtual ~Observer(){};
 
 	virtual void notify(Event const& someEvent)=0;
 

@@ -9,22 +9,37 @@
 #define KEYBOARD_HPP_
 
 #include <istream>
+using std::istream;
+#include <iostream>
+using std::cout;
+using std::cin;
+using std::endl;
 #include "Device.hpp"
-using namespace std;
+#include "Subject.hpp"
+#include <vector>
+using std::vector;
+#include <algorithm>
+using std::find;
 
-class Keyboard : public Device {
+class Observer;
+class Keyboard : public Device, public Subject {
 public:
-	Keyboard(istream & inPut):
-		myInput(inPut)
-	{
-
-	}
-	virtual ~Keyboard(){}
+	Keyboard(istream & inPut);
+	virtual ~Keyboard();
 	virtual void PutChar(char c);
 	virtual char GetChar();
 
+	virtual void RegisterObserver(
+			Observer * someObserver, Event * someEvent);
+	virtual void UnRegisterObserver(
+			Observer * someObserver, Event * someEvent);
+	virtual void EmitEvent(Event * someEvent);
+	virtual void Notify( );
+
 private:
-	istream& myInput;
+	istream& _myInput;
+	vector<Observer *> _observers;
+	Event _myEvent;
 };
 
 #endif /* KEYBOARD_HPP_ */

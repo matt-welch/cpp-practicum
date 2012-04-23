@@ -1,13 +1,15 @@
 #ifndef _DISPLAY
 #define _DISPLAY
 
-#include <ostream>
 #include "Device.hpp"
-
+#include "Observer.hpp"
+#include <iostream>
+using std::cout;
+using std::endl;
 
 using namespace std;
 
-class Display : public Device {
+class Display : public Device , public Observer {
 public:
 
     Display (ostream& outPut);
@@ -17,6 +19,8 @@ public:
     virtual void PutChar(char c);
 
     virtual char GetChar();
+
+    virtual void notify(Event const & someEvent);
 
 private:
     ostream& myOutput;
