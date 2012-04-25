@@ -7,13 +7,12 @@
 
 #include "SystemController.hpp"
 
-SystemController::SystemController(ostream & someOutput,
-									istream & someInput):
-	standard_input(someInput),
-	standard_output(someOutput)
+SystemController::SystemController(
+		ostream & myOutput, istream & myInput):
+	_stdin(myInput),
+	_stdout(myOutput)
 {
 	this->Init();
-
 }
 
 SystemController::~SystemController(){
@@ -21,10 +20,11 @@ SystemController::~SystemController(){
 }
 
 void SystemController::Init(){
-	Display * disp = new Display(standard_output);
-	Event * someEvent = new Event("Key-press Happened");
-	Keyboard * keyb = new Keyboard(standard_input);
-	keyb->RegisterObserver(disp, someEvent);
+	Event kbEvent("KeypressEvent");
+	_sys_display = new Display(_stdout);
+	_sys_keyboard = new Keyboard(_stdin, kbEvent);
+	Event * keypressEvent = new Event("Key-press Happened");
+	_sys_keyboard->RegisterObserver(_sys_display, keypressEvent);
 }
 
 void SystemController::Run(){

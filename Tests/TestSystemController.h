@@ -24,9 +24,10 @@ class SystemControllerTest: public ::testing::Test {
         virtual void SetUp()
         {
             /* Configure SystemController */
-        	masterControl = new SystemController();
+        	ostream outStream;
+        	istream inStream;
+        	masterControl = new SystemController(outStream, inStream);
             //mainMemory = new Ram();
-
         }
 
         virtual void TearDown()

@@ -24,7 +24,7 @@ using std::find;
 class Observer;
 class Keyboard : public Device, public Subject {
 public:
-	Keyboard(istream & inPut);
+	Keyboard(istream & inPut, Event & kbEvent);
 	virtual ~Keyboard();
 	virtual void PutChar(char c);
 	virtual char GetChar();
@@ -37,9 +37,9 @@ public:
 	virtual void Notify( );
 
 private:
-	istream& _myInput;
+	istream& _kbInput;
 	vector<Observer *> _observers;
-	Event _myEvent;
+	Event & _kbEvent;
 };
 
 #endif /* KEYBOARD_HPP_ */
