@@ -23,19 +23,19 @@ class SystemControllerTest: public ::testing::Test {
     protected:
         virtual void SetUp()
         {
-            /* Configure SystemController */
+ /*            Configure SystemController
         	ostream outStream;
         	istream inStream;
         	masterControl = new SystemController(outStream, inStream);
             //mainMemory = new Ram();
-        }
+ */       }
 
         virtual void TearDown()
         {
-            delete masterControl;
+
         }
 
-        SystemController masterControl;
+//        SystemController masterControl;
         //IMemory* mainMemory;
 };
 

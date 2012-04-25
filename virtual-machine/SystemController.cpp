@@ -20,9 +20,8 @@ SystemController::~SystemController(){
 }
 
 void SystemController::Init(){
-	Event kbEvent("KeypressEvent");
 	_sys_display = new Display(_stdout);
-	_sys_keyboard = new Keyboard(_stdin, kbEvent);
+	_sys_keyboard = new Keyboard(_stdin);
 	Event * keypressEvent = new Event("Key-press Happened");
 	_sys_keyboard->RegisterObserver(_sys_display, keypressEvent);
 }
