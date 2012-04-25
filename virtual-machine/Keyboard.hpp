@@ -34,12 +34,13 @@ public:
 	virtual void UnRegisterObserver(
 			Observer * someObserver, Event * someEvent);
 	virtual void EmitEvent(Event * someEvent);
-	virtual void Notify( );
+protected:
+	virtual void Notify( ) const;
 
 private:
 	istream& _kbInput;
 	vector<Observer *> _observers;
-	Event & _kbEvent;
+	const Event & _kbEvent;
 };
 
 #endif /* KEYBOARD_HPP_ */

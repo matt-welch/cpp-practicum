@@ -10,7 +10,7 @@
 
 #include "Event.hpp"
 #include <vector>
-
+using std::vector;
 
 class Observer {
 public:
@@ -18,13 +18,11 @@ public:
 
 	virtual ~Observer(){};
 
-	virtual void notify(Event const& someEvent)=0;
+	virtual void notifyObs(Event const & someEvent)=0;
 
 };
 
-/*
 // compiler doesn't like this but would be a convenient typedef
-typedef vector<Observer>::iterator ObserverItr;
-*/
+typedef vector<Observer*>::iterator ObserverItr;
 
 #endif /* OBSERVER_HPP_ */

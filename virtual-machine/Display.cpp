@@ -23,7 +23,7 @@ char Display::GetChar(){
     return 'a';
 }
 
-void Display::notify(Event const & someEvent){
+void Display::notifyObs(Event const & someEvent){
 	string output = "DisplayEventInfo";
 	output = someEvent.getInfo();
 	std::cout << "Display:::" << output << endl;
