@@ -26,5 +26,5 @@ char Display::GetChar(){
 void Display::notifyObs(Event const & someEvent){
 	string output = "DisplayEventInfo";
 	output = someEvent.getInfo();
-	std::cout << "DisplayEvent Received::[" << output << "]" <<endl;
+	std::cout << "Display:: Event Received [" << output << "]" <<endl;
 }

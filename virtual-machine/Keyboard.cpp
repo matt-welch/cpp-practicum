@@ -9,7 +9,7 @@
 
 Keyboard::Keyboard(istream & inPut):
 				_kbInput(inPut)
-{ }
+{ _kbEvent.setInfo("KeyPress");}
 
 Keyboard::~Keyboard(){
 
