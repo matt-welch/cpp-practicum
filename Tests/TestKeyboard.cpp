@@ -31,9 +31,9 @@ TEST(KeyboardTest, Test1)
     EXPECT_EQ(outPut, ReadThis);
 }
 
-/*TEST(KeyboardEventTest, Test2)
+TEST(KeyboardTest, DoesNothing)
 {
 	//Event
 
 
-}*/
+}

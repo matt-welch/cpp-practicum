@@ -34,7 +34,6 @@ public:
 	virtual void UnRegisterObserver(
 			Observer * someObserver, Event * someEvent);
 	virtual void EmitEvent(Event * someEvent);
-protected:
 	virtual void Notify( ) const;
 
 private:

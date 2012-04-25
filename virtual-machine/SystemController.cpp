@@ -27,7 +27,7 @@ void SystemController::Init(){
 }
 
 void SystemController::Run(){
-
+	_sys_keyboard->EmitEvent(new Event("Keyboard Starting Up."));
 }
 
 
