@@ -30,7 +30,7 @@ void Keyboard::EmitEvent(Event * someEvent)
 {
 //	string someInfo = someEvent->getInfo();
 //	_kbEvent.setInfo(someInfo);
-	cout << "KeyboardOutput::[" << _kbEvent.getInfo() << "]" << endl;
+	cout << "KeyboardEvent::[" << _kbEvent.getInfo() << "]" << endl;
 	Notify();
 }
 

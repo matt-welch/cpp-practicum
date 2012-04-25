@@ -17,25 +17,23 @@
 //#include "IMemory.h"
 //#include "Ram.h"
 
-using namespace K1;
-
 class SystemControllerTest: public ::testing::Test {
     protected:
         virtual void SetUp()
         {
- /*            Configure SystemController
-        	ostream outStream;
-        	istream inStream;
-        	masterControl = new SystemController(outStream, inStream);
+            //Configure SystemController
+        	/*ostream outStream;
+        	istream inStream;*/
+        	masterControl = new SystemController(std::cout, std::cin);
             //mainMemory = new Ram();
- */       }
+        }
 
         virtual void TearDown()
         {
 
         }
 
-//        SystemController masterControl;
+        SystemController * masterControl;
         //IMemory* mainMemory;
 };
 
