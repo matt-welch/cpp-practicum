@@ -28,9 +28,8 @@ void Keyboard::PutChar(char c)
 
 void Keyboard::EmitEvent(Event * someEvent)
 {
-//	string someInfo = someEvent->getInfo();
-//	_kbEvent.setInfo(someInfo);
-	cout << "KeyboardEvent::[" << _kbEvent.getInfo() << "]" << endl;
+	_kbEvent.setInfo(someEvent->getInfo());
+	cout << "KeyboardEvent::[" << someEvent->getInfo() << "]" << endl;
 	Notify();
 }
 
