@@ -27,7 +27,9 @@ void SystemController::Init(){
 }
 
 void SystemController::Run(){
-	_sys_keyboard->EmitEvent(new Event("Keyboard Starting Up."));
+	string message = "Why won't this print??";
+	Event * startupMessage  = new Event(message);
+	_sys_keyboard->EmitEvent(startupMessage);
 }
 
 
