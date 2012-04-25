@@ -14,7 +14,7 @@ Event::Event()
 
 Event::~Event(){ }
 
-Event::Event(string someInfo):
+Event::Event(string someInfo) :
 		_myInfo(someInfo)
 {
 

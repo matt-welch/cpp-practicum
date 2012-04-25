@@ -7,15 +7,18 @@
 
 #include "Keyboard.hpp"
 
-Keyboard::Keyboard(istream & inPut):
-				_myInput(inPut)
+Keyboard::Keyboard(istream & inPut, Event & kbEvent):
+				_kbInput(inPut),
+				_kbEvent(kbEvent)
 { }
 
-Keyboard::~Keyboard(){ }
+Keyboard::~Keyboard(){
+
+}
 
 char Keyboard::GetChar(){
 	char c;
-	_myInput >> c;
+	_kbInput >> c;
 	return c;
 }
 
@@ -26,9 +29,9 @@ void Keyboard::PutChar(char c)
 
 void Keyboard::EmitEvent(Event * someEvent)
 {
-	string someInfo = someEvent->getInfo();
-	_myEvent.setInfo(someInfo);
-	cout << "Interesting things:: "  << endl;
+//	string someInfo = someEvent->getInfo();
+//	_kbEvent.setInfo(someInfo);
+	cout << "KeyboardOutput::[" << _kbEvent.getInfo() << "]" << endl;
 	Notify();
 }
 
@@ -43,17 +46,17 @@ void Keyboard::UnRegisterObserver(
 		Observer * someObserver,
 		Event * someEvent)
 {
-    vector<Observer *>::iterator deleteMe =
+	vector<Observer *>::iterator deleteMe =
         find(_observers.begin(), _observers.end(), someObserver);
     _observers.erase(deleteMe);
 }
 
 void Keyboard::Notify()
 {
-	for(vector<Observer*>::iterator i = _observers.begin();
-			i != _observers.end();
-			++i)
+	for(vector<Observer *>::iterator itr = _observers.begin();
+			itr != _observers.end();
+			++itr)
 	{
-		(*i)->notify(_myEvent);
+		itr->notify(_kbEvent);
 	}
 }

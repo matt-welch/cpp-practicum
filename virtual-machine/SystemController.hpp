@@ -16,20 +16,23 @@ using std::istream;
 #include "Display.hpp"
 #include "Keyboard.hpp"
 #include "Event.hpp"
+#include <vector>
+using std::vector;
 
 class SystemController{
 
 public:
-	SystemController(ostream & someOutput,
-			istream & someInput);
+	SystemController(ostream & myOutput, istream & myInput);
 	~SystemController();
 
 	void Init();
 	void Run();
 
 private:
-	ostream& standard_output;
-	istream& standard_input;
+	ostream& _stdout;
+	istream& _stdin;
+	Display * _sys_display;
+	Keyboard * _sys_keyboard;
 };
 
 #endif
