@@ -13,6 +13,10 @@ using std::ostream;
 #include <istream>
 using std::istream;
 
+#include "Display.hpp"
+#include "Keyboard.hpp"
+#include "Event.hpp"
+
 class SystemController{
 
 public:

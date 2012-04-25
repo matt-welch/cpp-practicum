@@ -15,7 +15,7 @@ using namespace std;
 
 namespace K1 {
 
-    class RegFile {
+    class RegFile{
         public:
             enum RegName {
                 A,
@@ -28,6 +28,8 @@ namespace K1 {
             virtual ~RegFile (){}
             uint32_t GetRegister(RegName reg) const;
             void PutRegister(RegName reg, uint32_t data);
+
+            //
 
         private:
             map<RegName, uint32_t> _registers;

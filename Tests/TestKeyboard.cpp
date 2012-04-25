@@ -8,6 +8,9 @@
 #include <gtest/gtest.h>
 #include "Keyboard.hpp"
 #include "Device.hpp"
+#include "SystemController.hpp"
+#include "Event.hpp"
+
 
 #include <sstream>
 #include <iostream>
@@ -25,4 +28,11 @@ TEST(KeyboardTest, Test1)
     char outPut = kb->GetChar();
 
     EXPECT_EQ(outPut, ReadThis);
+}
+
+TEST(KeyboardEventTest, Test2)
+{
+	//Event
+
+
 }

@@ -24,5 +24,7 @@ char Display::GetChar(){
 }
 
 void Display::notify(Event const & someEvent){
-	std::cout << "Display:::" << endl;
+	string output = "";
+	output = someEvent.getInfo();
+	std::cout << "Display:::" << output << endl;
 }
