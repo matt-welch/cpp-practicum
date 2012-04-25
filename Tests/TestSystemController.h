@@ -22,19 +22,17 @@ class SystemControllerTest: public ::testing::Test {
         virtual void SetUp()
         {
             //Configure SystemController
-        	/*ostream outStream;
-        	istream inStream;*/
         	masterControl = new SystemController(std::cout, std::cin);
-            //mainMemory = new Ram();
+            //mainMemory = new Ram(); // for reference
         }
 
         virtual void TearDown()
         {
-
+        	delete masterControl;
         }
 
         SystemController * masterControl;
-        //IMemory* mainMemory;
+        //IMemory* mainMemory; // for reference
 };
 
 
