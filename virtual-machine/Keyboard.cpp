@@ -51,12 +51,13 @@ void Keyboard::UnRegisterObserver(
     _observers.erase(deleteMe);
 }
 
-void Keyboard::Notify()
+void Keyboard::Notify() const
 {
+//	Event thisEvent("keyboardEventHack");
 	for(vector<Observer *>::iterator itr = _observers.begin();
 			itr != _observers.end();
 			++itr)
 	{
-		itr->notify(_kbEvent);
+		itr->notifyObs(_kbEvent);
 	}
 }

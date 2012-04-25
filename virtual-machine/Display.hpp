@@ -16,7 +16,7 @@ public:
     virtual ~Display ();
     virtual void PutChar(char c);
     virtual char GetChar();
-    virtual void notify(Event const & someEvent);
+    virtual void notifyObs(Event const & someEvent);
 
 private:
     ostream& myOutput;
