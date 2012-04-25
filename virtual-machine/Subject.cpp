@@ -4,7 +4,6 @@
  *  Created on: Apr 19, 2012
  *      Author: mwelch
  */
-/*
 #include "Subject.hpp"
 
 Subject::Subject()
@@ -33,6 +32,6 @@ void Subject::EmitEvent(Event * someEvent)
 {
 }
 
-void Subject::Notify()
+void Subject::Notify() const
 {
-}*/
+}

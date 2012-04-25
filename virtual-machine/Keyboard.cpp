@@ -7,9 +7,8 @@
 
 #include "Keyboard.hpp"
 
-Keyboard::Keyboard(istream & inPut, Event & kbEvent):
-				_kbInput(inPut),
-				_kbEvent(kbEvent)
+Keyboard::Keyboard(istream & inPut):
+				_kbInput(inPut)
 { }
 
 Keyboard::~Keyboard(){
@@ -54,10 +53,10 @@ void Keyboard::UnRegisterObserver(
 void Keyboard::Notify() const
 {
 //	Event thisEvent("keyboardEventHack");
-	for(vector<Observer *>::iterator itr = _observers.begin();
+	for(vector<Observer *>::const_iterator itr = _observers.begin();
 			itr != _observers.end();
 			++itr)
 	{
-		itr->notifyObs(_kbEvent);
+		(*itr)->notifyObs(_kbEvent);
 	}
 }

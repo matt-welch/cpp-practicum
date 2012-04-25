@@ -7,6 +7,7 @@
 
 #include <gtest/gtest.h>
 #include "Keyboard.hpp"
+#include "Subject.hpp"
 #include "Device.hpp"
 #include "SystemController.hpp"
 #include "Event.hpp"
@@ -30,9 +31,9 @@ TEST(KeyboardTest, Test1)
     EXPECT_EQ(outPut, ReadThis);
 }
 
-TEST(KeyboardEventTest, Test2)
+/*TEST(KeyboardEventTest, Test2)
 {
 	//Event
 
 
-}
+}*/
