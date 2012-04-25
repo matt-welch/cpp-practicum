@@ -20,7 +20,7 @@ Event::Event(string someInfo):
 
 }
 
-string Event::getInfo()
+string Event::getInfo(void) const
 {
     return _myInfo;
 }

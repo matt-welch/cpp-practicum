@@ -13,13 +13,9 @@ class Display : public Device , public Observer {
 public:
 
     Display (ostream& outPut);
-
     virtual ~Display ();
-    
     virtual void PutChar(char c);
-
     virtual char GetChar();
-
     virtual void notify(Event const & someEvent);
 
 private:

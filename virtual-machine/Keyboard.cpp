@@ -38,6 +38,7 @@ void Keyboard::RegisterObserver(
 {
     _observers.push_back(someObserver);
 }
+
 void Keyboard::UnRegisterObserver(
 		Observer * someObserver,
 		Event * someEvent)

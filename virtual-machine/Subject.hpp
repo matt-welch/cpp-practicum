@@ -19,7 +19,7 @@ public:
 	virtual void UnRegisterObserver(
 				Observer * someObserver, Event * someEvent);
 	virtual void EmitEvent(Event * someEvent);
-	virtual void Notify( );
+	virtual void Notify( ) = 0;
 };
 
 

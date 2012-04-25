@@ -16,8 +16,8 @@ public:
 	Event();
 	Event(string someInfo);
 	~Event();
-	string getInfo();
-	void setInfo(string someInfo);
+	string getInfo(void) const;
+	void  setInfo(string someInfo);
 private:
 	string _myInfo;
 };
